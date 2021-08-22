@@ -1,0 +1,6 @@
+transit_gw_id = "tgw-049286415190f35f8"
+resource_share_arn = "arn:aws:ram:us-west-2:123456789012:resource-share/7ab63972-b505-7e2a-420d-6f5d3EXAMPLE"
+aws_access_key = "1234568792"
+aws_secret_key = "examplekey"
+hcp_client_id = "exampleid"
+hcp_client_secret = "examplesecret"
