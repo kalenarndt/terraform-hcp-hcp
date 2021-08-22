@@ -1,21 +1,21 @@
 output "vault_private_endpoint_url" {
-  value = hcp_vault_cluster.vault_cluster[0].vault_private_endpoint_url
+  value = concat(hcp_vault_cluster.vault_cluster.*.vault_private_endpoint_url, [""])[0]
 }
 
 output "vault_public_endpoint_url" {
-  value = hcp_vault_cluster.vault_cluster[0].vault_public_endpoint_url
+  value = concat(hcp_vault_cluster.vault_cluster.*.vault_public_endpoint_url, [""])[0]
 }
 
 output "vault_cluster_id" {
-  value = hcp_vault_cluster.vault_cluster[0].cluster_id
+  value = concat(hcp_vault_cluster.vault_cluster.*.cluster_id, [""])[0]
 }
 
 output "vault_tier" {
-  value = hcp_vault_cluster.vault_cluster[0].tier
+  value = concat(hcp_vault_cluster.vault_cluster.*.tier, [""])[0]
 }
 
 output "vault_version" {
-  value = hcp_vault_cluster.vault_cluster[0].vault_version
+  value = concat(hcp_vault_cluster.vault_cluster.*.vault_version, [""])[0]
 }
 
 output "vault_token" {
@@ -23,27 +23,27 @@ output "vault_token" {
 }
 
 output "consul_cluster_id" {
-  value = hcp_consul_cluster.consul_cluster[0].cluster_id
+  value = concat(hcp_consul_cluster.consul_cluster.*.cluster_id, [""])[0]
 }
 
 output "consul_private_endpoint_url" {
-  value = hcp_consul_cluster.consul_cluster[0].consul_private_endpoint_url
+  value = concat(hcp_consul_cluster.consul_cluster.*.consul_private_endpoint_url, [""])[0]
 }
 
 output "consul_public_endpoint_url" {
-  value = hcp_consul_cluster.consul_cluster[0].consul_public_endpoint_url
+  value = concat(hcp_consul_cluster.consul_cluster.*.consul_public_endpoint_url, [""])[0]
 }
 
 output "consul_tier" {
-  value = hcp_consul_cluster.consul_cluster[0].tier
+  value = concat(hcp_consul_cluster.consul_cluster.*.tier, [""])[0]
 }
 
 output "consul_size" {
-  value = hcp_consul_cluster.consul_cluster[0].size
+  value = concat(hcp_consul_cluster.consul_cluster.*.size, [""])[0]
 }
 
 output "consul_version" {
-  value = hcp_consul_cluster.consul_cluster[0].consul_version
+  value = concat(hcp_consul_cluster.consul_cluster.*.consul_version, [""])[0]
 }
 
 output "consul_token" {
