@@ -295,7 +295,7 @@ locals {
   output_vault_token_nonsensitive      = var.output_vault_token && var.generate_vault_token == true ? nonsensitive(hcp_vault_cluster_admin_token.vault_token[0].token) : null
 }
 
-########### NEEDS TESTING
+########### NEEDS TESTING#
 
 // retrieves the primary link for the federation peering.
 data "hcp_consul_cluster" "primary" {
