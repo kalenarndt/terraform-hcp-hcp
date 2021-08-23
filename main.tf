@@ -43,7 +43,7 @@ resource "aws_vpc_peering_connection_accepter" "hvn_aws_vpc_accept" {
 }
 ###################################### END Single HVN VPC Networking ######################################
 
-######################################   Single HVN Transit Gateway  ######################################
+######################################  Single HVN Transit Gateway  #######################################
 
 // associates the hcp provider id with the resource_share arn in aws
 resource "aws_ram_principal_association" "hcp_aws_ram" {
@@ -80,9 +80,9 @@ resource "hcp_hvn_route" "hvn_tgw_route" {
   target_link      = hcp_aws_transit_gateway_attachment.hvn_transit_gw[0].self_link
 }
 
-###################################### Single HVN Transit Gateway #####################################
+###################################### END Single HVN Transit Gateway #####################################
 
-###################################### Vault VPC Networking ###################################### 
+######################################     Vault VPC Networking     #######################################
 
 // creates the hvn vault network resource
 resource "hcp_hvn" "hcp_vault_hvn" {
@@ -126,9 +126,9 @@ resource "aws_vpc_peering_connection_accepter" "hvn_vault_aws_vpc_accept" {
     Name = var.hvn_vault_peering_id
   }
 }
-######################################  END Vault VPC Networking ###################################### 
+######################################   END Vault VPC Networking   #######################################
 
-###################################### Vault Transit Gateway Networking ################################
+###################################### Vault Transit Gateway Networking ###################################
 // associates the hcp provider id with the resource_share arn in aws
 resource "aws_ram_principal_association" "hcp_vault_aws_ram" {
   count = var.transit_gateway && var.create_vault_cluster && var.single_hvn == false ? 1 : 0
@@ -165,7 +165,7 @@ resource "hcp_hvn_route" "hvn_vault_tgw_route" {
 }
 ###################################### END Vault Transit Gateway Networking ################################
 
-###################################### Consul VPC Networking ###################################### 
+######################################      Consul VPC Networking     ###################################### 
 // creates a route for HVN to aws via the vpc
 resource "hcp_hvn_route" "hvn_consul_vpc_route" {
   count = var.vpc_peering && var.create_consul_cluster && var.single_hvn == false ? 1 : 0

@@ -1,5 +1,5 @@
 module "hcp" {
-  source               = "./modules/hcp_vault"
+  source               = "github.com/kalenarndt/terraform-hcp-hcp"
   region               = var.region
   vault_tier           = "dev"
   vpc_region           = var.region
