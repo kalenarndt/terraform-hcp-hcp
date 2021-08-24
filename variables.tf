@@ -35,7 +35,7 @@ variable "vault_public_endpoint" {
 variable "min_vault_version" {
   description = "Minimum Vault version to use when creating the cluster. If null, defaults to HCP recommended version"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "output_vault_token" {
@@ -140,7 +140,7 @@ variable "consul_public_endpoint" {
 variable "min_consul_version" {
   description = "Minimum Consul version to use when creating the cluster. If null, defaults to HCP recommended version"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "connect_enabled" {
@@ -158,7 +158,7 @@ variable "consul_cluster_name" {
 variable "consul_datacenter" {
   description = "The Consul datacenter name. If set to null the datacenter will be set to the Consul cluster name. Defaults to null"
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "hvn_to_hvn_peering" {
@@ -194,7 +194,7 @@ variable "federation" {
 variable "primary_consul_cluster_name" {
   description = "Primary Consul cluster name (id) that secondary clusters will be federating with."
   type        = string
-  default     = null
+  default     = ""
 }
 
 variable "hvn_consul_route_id" {

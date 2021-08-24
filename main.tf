@@ -255,7 +255,7 @@ resource "hcp_vault_cluster" "vault_cluster" {
   cluster_id        = var.vault_cluster_name
   tier              = var.vault_tier
   public_endpoint   = var.vault_public_endpoint
-  min_vault_version = var.min_vault_version
+  min_vault_version = var.min_vault_version != "" ? var.min_vault_version : null
 }
 
 // generates a vault admin token for the cluster
@@ -274,8 +274,8 @@ resource "hcp_consul_cluster" "consul_cluster" {
   tier                    = var.consul_tier
   size                    = var.consul_size
   public_endpoint         = var.consul_public_endpoint
-  datacenter              = var.consul_datacenter != null ? var.consul_datacenter : var.consul_cluster_name
-  min_consul_version      = var.min_consul_version
+  datacenter              = var.consul_datacenter != "" ? var.consul_datacenter : var.consul_cluster_name
+  min_consul_version      = var.min_consul_version != "" ? var.min_consul_version : null
   connect_enabled         = var.connect_enabled
   auto_hvn_to_hvn_peering = var.hvn_to_hvn_peering
   primary_link            = var.federation != false ? data.hcp_consul_cluster.primary[0].cluster_id : null
@@ -301,7 +301,7 @@ locals {
 data "hcp_consul_cluster" "primary" {
   count = var.federation ? 1 : 0
 
-  cluster_id = var.primary_consul_cluster_name
+  cluster_id = var.primary_consul_cluster_name != "" ? var.primary_consul_cluster_name : null
 }
 
 // snapshots the consul cluster
