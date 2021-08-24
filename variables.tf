@@ -188,7 +188,7 @@ variable "auto_hvn_to_hvn_peering" {
 variable "federation" {
   description = "Flag to enable Consul Federation. Defaults to false"
   type        = bool
-  default     = "false"
+  default     = false
 }
 
 variable "primary_consul_cluster_name" {
