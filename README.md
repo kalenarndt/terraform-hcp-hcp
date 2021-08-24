@@ -61,7 +61,7 @@ No modules.
 | <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | The cloud provider of the HCP HVN, HCP Vault, or HCP Consul cluster. | `string` | `"aws"` | no |
 | <a name="input_connect_enabled"></a> [connect\_enabled](#input\_connect\_enabled) | Denotes the Consul connect feature should be enabled. Defaults to true | `bool` | `true` | no |
 | <a name="input_consul_cluster_name"></a> [consul\_cluster\_name](#input\_consul\_cluster\_name) | The name (id) of the HCP Consul cluster | `string` | `"hcp-consul-cluster"` | no |
-| <a name="input_consul_datacenter"></a> [consul\_datacenter](#input\_consul\_datacenter) | The Consul datacenter name. If set to null the datacenter will be set to the Consul cluster name. Defaults to null | `string` | `null` | no |
+| <a name="input_consul_datacenter"></a> [consul\_datacenter](#input\_consul\_datacenter) | The Consul datacenter name. If set to null the datacenter will be set to the Consul cluster name. Defaults to null | `string` | `""` | no |
 | <a name="input_consul_destination_cidr"></a> [consul\_destination\_cidr](#input\_consul\_destination\_cidr) | Destination CIDR for HCP Consul to communicate with. Only required if HCP Consul requires a different route table than Vault and you are creating both clusters in 1 call. If not specified var.destination\_cidr is used | `string` | `""` | no |
 | <a name="input_consul_public_endpoint"></a> [consul\_public\_endpoint](#input\_consul\_public\_endpoint) | Exposes the Consul cluster to the internet. Defaults to false | `bool` | `false` | no |
 | <a name="input_consul_size"></a> [consul\_size](#input\_consul\_size) | Size of the HCP Consul nodes - x\_small, small, medium, large - x\_small only works with development tier | `string` | `"x_small"` | no |
@@ -69,7 +69,7 @@ No modules.
 | <a name="input_create_consul_cluster"></a> [create\_consul\_cluster](#input\_create\_consul\_cluster) | Flag to create an HCP Consul cluster | `bool` | `false` | no |
 | <a name="input_create_vault_cluster"></a> [create\_vault\_cluster](#input\_create\_vault\_cluster) | Flag to create a Vault cluster | `bool` | `false` | no |
 | <a name="input_destination_cidr"></a> [destination\_cidr](#input\_destination\_cidr) | Destination CIDR block for HCP to communicate with | `string` | `""` | no |
-| <a name="input_federation"></a> [federation](#input\_federation) | Flag to enable Consul Federation. Defaults to false | `bool` | `"false"` | no |
+| <a name="input_federation"></a> [federation](#input\_federation) | Flag to enable Consul Federation. Defaults to false | `bool` | `false` | no |
 | <a name="input_generate_consul_token"></a> [generate\_consul\_token](#input\_generate\_consul\_token) | Flag to generate HCP Consul root token | `bool` | `false` | no |
 | <a name="input_generate_vault_token"></a> [generate\_vault\_token](#input\_generate\_vault\_token) | Flag to generate HCP Vault admin token | `bool` | `false` | no |
 | <a name="input_hvn_cidr_block"></a> [hvn\_cidr\_block](#input\_hvn\_cidr\_block) | CIDR block for the HVN VPC | `string` | `"172.25.16.0/20"` | no |
@@ -85,11 +85,11 @@ No modules.
 | <a name="input_hvn_vault_id"></a> [hvn\_vault\_id](#input\_hvn\_vault\_id) | The ID of the HCP Vault HVN. | `string` | `"hcp-vault-hvn"` | no |
 | <a name="input_hvn_vault_peering_id"></a> [hvn\_vault\_peering\_id](#input\_hvn\_vault\_peering\_id) | The Peering ID of the HCP Vault HVN. | `string` | `"hcp-vault-hvn-peer"` | no |
 | <a name="input_hvn_vault_route_id"></a> [hvn\_vault\_route\_id](#input\_hvn\_vault\_route\_id) | The ID of the HCP Vault HVN route. | `string` | `"hcp-vault-hvn-route"` | no |
-| <a name="input_min_consul_version"></a> [min\_consul\_version](#input\_min\_consul\_version) | Minimum Consul version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `null` | no |
-| <a name="input_min_vault_version"></a> [min\_vault\_version](#input\_min\_vault\_version) | Minimum Vault version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `null` | no |
+| <a name="input_min_consul_version"></a> [min\_consul\_version](#input\_min\_consul\_version) | Minimum Consul version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `""` | no |
+| <a name="input_min_vault_version"></a> [min\_vault\_version](#input\_min\_vault\_version) | Minimum Vault version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `""` | no |
 | <a name="input_output_consul_token"></a> [output\_consul\_token](#input\_output\_consul\_token) | Flag to output the generated Consul token as a non-sensitive object. Use with caution | `bool` | `false` | no |
 | <a name="input_output_vault_token"></a> [output\_vault\_token](#input\_output\_vault\_token) | Flag to output the generated Vault token as a non-sensitive object. Use with caution | `bool` | `false` | no |
-| <a name="input_primary_consul_cluster_name"></a> [primary\_consul\_cluster\_name](#input\_primary\_consul\_cluster\_name) | Primary Consul cluster name (id) that secondary clusters will be federating with. | `string` | `null` | no |
+| <a name="input_primary_consul_cluster_name"></a> [primary\_consul\_cluster\_name](#input\_primary\_consul\_cluster\_name) | Primary Consul cluster name (id) that secondary clusters will be federating with. | `string` | `""` | no |
 | <a name="input_region"></a> [region](#input\_region) | The region of the HCP HVN and Vault cluster. | `string` | `""` | no |
 | <a name="input_resource_share_arn"></a> [resource\_share\_arn](#input\_resource\_share\_arn) | Amazon Resource Name of the Resource Share that is needed to grant HCP acces to the transit gateway | `string` | `""` | no |
 | <a name="input_single_hvn"></a> [single\_hvn](#input\_single\_hvn) | Flag that creates a single HVN that is shared between Vault and Consul. Defaults to false | `bool` | `false` | no |
