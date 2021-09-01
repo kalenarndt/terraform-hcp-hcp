@@ -53,3 +53,11 @@ output "consul_token" {
 output "consul_k8s_token" {
   value = local.output_consul_k8s_token_nonsensitive
 }
+
+output "tgw_vault_target_link" {
+  value = hcp_aws_transit_gateway_attachment.hvn_vault_transit_gw[0].self_link
+}
+
+output "hvn_vault_link" {
+  value = hcp_hvn.hcp_vault_hvn[0].self_link
+}
