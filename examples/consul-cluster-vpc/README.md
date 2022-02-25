@@ -55,4 +55,52 @@ $ terraform plan
 $ terraform apply
 ```
 
-Please keep in mind that this will provision a Consul cluster which will incur cost. 
+Please keep in mind that this will provision a Consul cluster which will incur cost. <!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~>1.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~>3.51.0 |
+| <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | ~>0.10.0 |
+
+## Providers
+
+No providers.
+
+## Modules
+
+| Name | Source | Version |
+|------|--------|---------|
+| <a name="module_hcp"></a> [hcp](#module\_hcp) | github.com/kalenarndt/terraform-hcp-hcp | n/a |
+
+## Resources
+
+No resources.
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_aws_access_key"></a> [aws\_access\_key](#input\_aws\_access\_key) | Access key used to authenticate with AWS. Environment variables are preferred | `string` | `null` | no |
+| <a name="input_aws_secret_key"></a> [aws\_secret\_key](#input\_aws\_secret\_key) | Secret key used to authenticate with AWS. Environment variables are preferred | `string` | `null` | no |
+| <a name="input_destination_cidr"></a> [destination\_cidr](#input\_destination\_cidr) | CIDR block for remote subnets that will be allowed to access HCP | `string` | `"10.0.0.0/16"` | no |
+| <a name="input_hcp_client_id"></a> [hcp\_client\_id](#input\_hcp\_client\_id) | Client ID used to authenticate with HCP. Environment variables are preferred | `string` | `null` | no |
+| <a name="input_hcp_client_secret"></a> [hcp\_client\_secret](#input\_hcp\_client\_secret) | Client secret used to authenticate with HCP. Environment variables are preferred | `string` | `null` | no |
+| <a name="input_region"></a> [region](#input\_region) | The region of the HCP HVN and Vault cluster. | `string` | `"us-west-2"` | no |
+| <a name="input_vpc_id"></a> [vpc\_id](#input\_vpc\_id) | Peer ID from the AWS peering VPC | `string` | `""` | no |
+| <a name="input_vpc_owner_id"></a> [vpc\_owner\_id](#input\_vpc\_owner\_id) | Peer account ID from AWS | `string` | `""` | no |
+| <a name="input_vpc_region"></a> [vpc\_region](#input\_vpc\_region) | Region where the AWS VPC was created | `string` | `"us-west-2"` | no |
+
+## Outputs
+
+| Name | Description |
+|------|-------------|
+| <a name="output_consul_cluster_id"></a> [consul\_cluster\_id](#output\_consul\_cluster\_id) | n/a |
+| <a name="output_consul_k8s_token"></a> [consul\_k8s\_token](#output\_consul\_k8s\_token) | n/a |
+| <a name="output_consul_private_endpoint_url"></a> [consul\_private\_endpoint\_url](#output\_consul\_private\_endpoint\_url) | n/a |
+| <a name="output_consul_size"></a> [consul\_size](#output\_consul\_size) | n/a |
+| <a name="output_consul_tier"></a> [consul\_tier](#output\_consul\_tier) | n/a |
+| <a name="output_consul_token"></a> [consul\_token](#output\_consul\_token) | n/a |
+| <a name="output_consul_version"></a> [consul\_version](#output\_consul\_version) | n/a |
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

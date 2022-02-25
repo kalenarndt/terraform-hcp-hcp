@@ -15,8 +15,8 @@ variable "vault_tier" {
   type        = string
   default     = "dev"
   validation {
-    condition     = var.vault_tier != "dev" || var.vault_tier != "standard_small" || var.vault_tier != "standard_medium" || var.vault_tier != "standard_large" || var.vault_tier != "starter_small"
-    error_message = "The variable vault_tier must be \"dev\", \"standard_small\", \"standard_medium\", \"starter_small\", or \"standard_large\"."
+    condition     = var.vault_tier != "dev" || var.vault_tier != "standard_small" || var.vault_tier != "standard_medium" || var.vault_tier != "standard_large" || var.vault_tier != "starter_small" || var.vault_tier != "plus_small" || var.vault_tier != "plus_medium" || var.vault_tier != "plus_large"
+    error_message = "The variable vault_tier must be \"dev\", \"standard_small\", \"standard_medium\", \"starter_small\", \"standard_large\", \"plus_small\", \"plus_medium\", or \"plus_large\"."
   }
 }
 

@@ -1,4 +1,4 @@
-<!-- BEGIN_TF_DOCS -->
+<!-- BEGINNING OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
 ## Requirements
 
 | Name | Version |
@@ -11,8 +11,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | >= 3.15 |
-| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | >=0.10.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.2.0 |
+| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.22.0 |
 
 ## Modules
 
@@ -126,10 +126,12 @@ No modules.
 | <a name="output_consul_tier"></a> [consul\_tier](#output\_consul\_tier) | n/a |
 | <a name="output_consul_token"></a> [consul\_token](#output\_consul\_token) | n/a |
 | <a name="output_consul_version"></a> [consul\_version](#output\_consul\_version) | n/a |
+| <a name="output_hvn_vault_link"></a> [hvn\_vault\_link](#output\_hvn\_vault\_link) | n/a |
+| <a name="output_tgw_vault_target_link"></a> [tgw\_vault\_target\_link](#output\_tgw\_vault\_target\_link) | n/a |
 | <a name="output_vault_cluster_id"></a> [vault\_cluster\_id](#output\_vault\_cluster\_id) | n/a |
 | <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | n/a |
 | <a name="output_vault_public_endpoint_url"></a> [vault\_public\_endpoint\_url](#output\_vault\_public\_endpoint\_url) | n/a |
 | <a name="output_vault_tier"></a> [vault\_tier](#output\_vault\_tier) | n/a |
 | <a name="output_vault_token"></a> [vault\_token](#output\_vault\_token) | n/a |
 | <a name="output_vault_version"></a> [vault\_version](#output\_vault\_version) | n/a |
-<!-- END_TF_DOCS -->
+<!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
