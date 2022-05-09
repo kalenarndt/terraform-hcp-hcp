@@ -11,8 +11,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.2.0 |
-| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.22.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.13.0 |
+| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.27.0 |
 
 ## Modules
 
@@ -118,7 +118,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_consul_cert"></a> [consul\_cert](#output\_consul\_cert) | n/a |
 | <a name="output_consul_cluster_id"></a> [consul\_cluster\_id](#output\_consul\_cluster\_id) | n/a |
+| <a name="output_consul_config"></a> [consul\_config](#output\_consul\_config) | n/a |
 | <a name="output_consul_k8s_token"></a> [consul\_k8s\_token](#output\_consul\_k8s\_token) | n/a |
 | <a name="output_consul_private_endpoint_url"></a> [consul\_private\_endpoint\_url](#output\_consul\_private\_endpoint\_url) | n/a |
 | <a name="output_consul_public_endpoint_url"></a> [consul\_public\_endpoint\_url](#output\_consul\_public\_endpoint\_url) | n/a |
@@ -126,7 +128,11 @@ No modules.
 | <a name="output_consul_tier"></a> [consul\_tier](#output\_consul\_tier) | n/a |
 | <a name="output_consul_token"></a> [consul\_token](#output\_consul\_token) | n/a |
 | <a name="output_consul_version"></a> [consul\_version](#output\_consul\_version) | n/a |
+| <a name="output_hvn_consul_link"></a> [hvn\_consul\_link](#output\_hvn\_consul\_link) | n/a |
+| <a name="output_hvn_single_link"></a> [hvn\_single\_link](#output\_hvn\_single\_link) | n/a |
 | <a name="output_hvn_vault_link"></a> [hvn\_vault\_link](#output\_hvn\_vault\_link) | n/a |
+| <a name="output_tgw_consul_target_link"></a> [tgw\_consul\_target\_link](#output\_tgw\_consul\_target\_link) | n/a |
+| <a name="output_tgw_single_hvn_target_link"></a> [tgw\_single\_hvn\_target\_link](#output\_tgw\_single\_hvn\_target\_link) | n/a |
 | <a name="output_tgw_vault_target_link"></a> [tgw\_vault\_target\_link](#output\_tgw\_vault\_target\_link) | n/a |
 | <a name="output_vault_cluster_id"></a> [vault\_cluster\_id](#output\_vault\_cluster\_id) | n/a |
 | <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | n/a |

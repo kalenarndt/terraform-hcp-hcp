@@ -60,9 +60,9 @@ Please keep in mind that this will provision a Consul cluster which will incur c
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~>1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~>3.51.0 |
-| <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | ~>0.10.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=3.51.0 |
+| <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >=0.10.0 |
 
 ## Providers
 
