@@ -55,9 +55,33 @@ output "consul_k8s_token" {
 }
 
 output "tgw_vault_target_link" {
-  value = hcp_aws_transit_gateway_attachment.hvn_vault_transit_gw[0].self_link
+  value = concat(hcp_aws_transit_gateway_attachment.hvn_vault_transit_gw.*.self_link, [""])[0]
+}
+
+output "tgw_single_hvn_target_link" {
+  value = concat(hcp_aws_transit_gateway_attachment.hvn_transit_gw.*.self_link, [""])[0]
+}
+
+output "tgw_consul_target_link" {
+  value = concat(hcp_aws_transit_gateway_attachment.hvn_consul_transit_gw.*.self_link, [""])[0]
 }
 
 output "hvn_vault_link" {
-  value = hcp_hvn.hcp_vault_hvn[0].self_link
+  value = concat(hcp_hvn.hcp_vault_hvn.*.self_link, [""])[0]
+}
+
+output "hvn_single_link" {
+  value = concat(hcp_hvn.hcp_hvn.*.self_link, [""])[0]
+}
+
+output "hvn_consul_link" {
+  value = concat(hcp_hvn.hcp_consul_hvn.*.self_link, [""])[0]
+}
+
+output "consul_config" {
+  value = concat(hcp_consul_cluster.consul_cluster.*.consul_config_file, [""])[0]
+}
+
+output "consul_cert" {
+  value = concat(hcp_consul_cluster.consul_cluster.*.consul_ca_file, [""])[0]
 }
