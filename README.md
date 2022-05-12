@@ -121,6 +121,7 @@ No modules.
 | <a name="output_consul_cert"></a> [consul\_cert](#output\_consul\_cert) | n/a |
 | <a name="output_consul_cluster_id"></a> [consul\_cluster\_id](#output\_consul\_cluster\_id) | n/a |
 | <a name="output_consul_config"></a> [consul\_config](#output\_consul\_config) | n/a |
+| <a name="output_consul_datacenter"></a> [consul\_datacenter](#output\_consul\_datacenter) | n/a |
 | <a name="output_consul_k8s_token"></a> [consul\_k8s\_token](#output\_consul\_k8s\_token) | n/a |
 | <a name="output_consul_private_endpoint_url"></a> [consul\_private\_endpoint\_url](#output\_consul\_private\_endpoint\_url) | n/a |
 | <a name="output_consul_public_endpoint_url"></a> [consul\_public\_endpoint\_url](#output\_consul\_public\_endpoint\_url) | n/a |

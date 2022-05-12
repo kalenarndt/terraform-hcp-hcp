@@ -46,6 +46,10 @@ output "consul_version" {
   value = concat(hcp_consul_cluster.consul_cluster.*.consul_version, [""])[0]
 }
 
+output "consul_datacenter" {
+  value = concat(hcp_consul_cluster.consul_cluster.*.datacenter, [""])[0]
+}
+
 output "consul_token" {
   value = local.output_consul_token_nonsensitive
 }
