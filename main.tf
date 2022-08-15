@@ -1,3 +1,4 @@
+######################################     Single HVN Networking     #######################################
 // Creates a single HCP HVN for both Consul and Vault
 resource "hcp_hvn" "hcp_hvn" {
   count          = var.single_hvn ? 1 : 0
@@ -7,7 +8,9 @@ resource "hcp_hvn" "hcp_hvn" {
   cidr_block     = var.hvn_cidr_block
 }
 
-######################################     Vault VPC Networking     #######################################
+######################################     Vault HVN Networking     #######################################
+##                             Only used if you are putting Vault on it's own HVN                        ##
+###########################################################################################################
 
 // creates the hvn vault network resource
 resource "hcp_hvn" "hcp_vault_hvn" {
@@ -18,7 +21,9 @@ resource "hcp_hvn" "hcp_vault_hvn" {
   cidr_block     = var.hvn_vault_cidr_block
 }
 
-######################################      Consul VPC Networking     ######################################
+######################################     Consul HVN Networking     ######################################
+##                            Only used if you are putting Consul on it's own HVN                        ##
+###########################################################################################################
 
 // creates the hvn consul network resource
 resource "hcp_hvn" "hcp_consul_hvn" {

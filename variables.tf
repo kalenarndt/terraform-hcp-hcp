@@ -56,48 +56,6 @@ variable "hvn_vault_cidr_block" {
   default     = "172.25.16.0/24"
 }
 
-variable "hvn_vault_route_id" {
-  description = "The ID of the HCP Vault HVN route."
-  type        = string
-  default     = "hcp-vault-hvn-route"
-}
-
-variable "hvn_vault_peering_id" {
-  description = "The Peering ID of the HCP Vault HVN."
-  type        = string
-  default     = "hcp-vault-hvn-peer"
-}
-
-variable "vpc_vault_owner_id" {
-  description = "Peer account ID from AWS for the VPC that Vault will use. Only required if Vault is peering with a VPC that has a different owner than vpc_owner_id"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_vault_region" {
-  description = "Region where the destination VPC that Vault will peer with. Only required if Vault HVN is peering with a VPC in a different region than vpc_region"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_vault_id" {
-  description = "Peer ID of the VPC in AWS that the HVN (Vault) will peer with. If not set, module peers with vpc_id"
-  type        = string
-  default     = ""
-}
-
-variable "vault_destination_cidr" {
-  description = "Destination CIDR for HCP Vault to communicate with. Only required if HCP Vault requires a different route table than Consul. If not specified var.destination_cidr is used"
-  type        = string
-  default     = ""
-}
-
-variable "transit_gw_vault_attachment_id" {
-  description = "Name of the transit gateway attachment for Vault in HVN"
-  type        = string
-  default     = "hcp-hvn-vault-transit-gw"
-}
-
 ##### Consul
 variable "create_consul_cluster" {
   description = "Flag to create an HCP Consul cluster"
@@ -197,12 +155,6 @@ variable "primary_consul_cluster_name" {
   default     = ""
 }
 
-variable "hvn_consul_route_id" {
-  description = "The ID of the HCP Consul HVN route."
-  type        = string
-  default     = "hcp-consul-hvn-route"
-}
-
 variable "hvn_consul_cidr_block" {
   description = "CIDR block for the HVN Consul VPC"
   type        = string
@@ -215,83 +167,12 @@ variable "hvn_consul_id" {
   default     = "hcp-consul-hvn"
 }
 
-variable "hvn_consul_peering_id" {
-  description = "The Peering ID of the HCP Consul HVN."
-  type        = string
-  default     = "hcp-consul-hvn-peer"
-}
-
-variable "vpc_consul_owner_id" {
-  description = "Peer account ID from AWS for the VPC that Consul will use. Only required if Consul is peering with a VPC that has a different owner than vpc_owner_id"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_consul_region" {
-  description = "Region where the destination VPC that Consul will peer with. Only required if Consul HVN is peering with a VPC in a different region than vpc_region"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_consul_id" {
-  description = "Peer ID of the VPC in AWS that the HVN (Consul) will peer with. If not set, module peers with vpc_id"
-  type        = string
-  default     = ""
-}
-
-variable "consul_destination_cidr" {
-  description = "Destination CIDR for HCP Consul to communicate with. Only required if HCP Consul requires a different route table than Vault and you are creating both clusters in 1 call. If not specified var.destination_cidr is used"
-  type        = string
-  default     = ""
-}
-
-variable "transit_gw_consul_attachment_id" {
-  description = "Name of the transit gateway attachment for Consul in HVN"
-  type        = string
-  default     = "hcp-hvn-consul-transit-gw"
-}
-#### End Consul ####
-
-variable "vpc_peering" {
-  description = "Flag to enable vpc peering with HCP and AWS"
-  type        = bool
-  default     = true
-}
+###
 
 variable "single_hvn" {
   description = "Flag that creates a single HVN that is shared between Vault and Consul. Defaults to false"
   type        = bool
   default     = false
-}
-
-variable "transit_gateway" {
-  description = "Flag to use an AWS transit gateway"
-  type        = bool
-  default     = false
-}
-
-variable "vpc_id" {
-  description = "Peer ID from the AWS peering VPC"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_owner_id" {
-  description = "Peer account ID from AWS"
-  type        = string
-  default     = ""
-}
-
-variable "destination_cidr" {
-  description = "Destination CIDR block for HCP to communicate with"
-  type        = string
-  default     = ""
-}
-
-variable "vpc_region" {
-  description = "Region where the AWS VPC was created"
-  type        = string
-  default     = ""
 }
 
 variable "hvn_cidr_block" {
@@ -326,28 +207,4 @@ variable "hvn_id" {
   description = "The ID of the HCP HVN."
   type        = string
   default     = "hcp-hvn"
-}
-
-variable "hvn_peering_id" {
-  description = "The ID of the HCP peering connection."
-  type        = string
-  default     = "hcp-hvn-peering"
-}
-
-variable "transit_gw_attachment_id" {
-  description = "Name of the transit gateway attachment for collapsed network in HVN"
-  type        = string
-  default     = "hcp-hvn-transit-gw"
-}
-
-variable "transit_gw_id" {
-  description = "ID of the transit gateway that exists in AWS that HCP will attach to"
-  type        = string
-  default     = ""
-}
-
-variable "resource_share_arn" {
-  description = "Amazon Resource Name of the Resource Share that is needed to grant HCP acces to the transit gateway"
-  type        = string
-  default     = ""
 }
