@@ -167,7 +167,7 @@ variable "hvn_consul_id" {
   default     = "hcp-consul-hvn"
 }
 
-###
+
 
 variable "single_hvn" {
   description = "Flag that creates a single HVN that is shared between Vault and Consul. Defaults to false"
@@ -179,12 +179,6 @@ variable "hvn_cidr_block" {
   description = "CIDR block for the HVN VPC"
   type        = string
   default     = "172.25.16.0/20"
-}
-
-variable "hvn_route_id" {
-  description = "The ID of the HCP HVN route."
-  type        = string
-  default     = "hcp-hvn-route"
 }
 
 variable "region" {

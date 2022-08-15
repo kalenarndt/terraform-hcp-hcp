@@ -51,7 +51,6 @@ No modules.
 | <a name="input_hvn_consul_cidr_block"></a> [hvn\_consul\_cidr\_block](#input\_hvn\_consul\_cidr\_block) | CIDR block for the HVN Consul VPC | `string` | `"172.25.17.0/24"` | no |
 | <a name="input_hvn_consul_id"></a> [hvn\_consul\_id](#input\_hvn\_consul\_id) | The ID of the HCP Consul HVN. | `string` | `"hcp-consul-hvn"` | no |
 | <a name="input_hvn_id"></a> [hvn\_id](#input\_hvn\_id) | The ID of the HCP HVN. | `string` | `"hcp-hvn"` | no |
-| <a name="input_hvn_route_id"></a> [hvn\_route\_id](#input\_hvn\_route\_id) | The ID of the HCP HVN route. | `string` | `"hcp-hvn-route"` | no |
 | <a name="input_hvn_to_hvn_peering"></a> [hvn\_to\_hvn\_peering](#input\_hvn\_to\_hvn\_peering) | Enables automatic HVN to HVN peering when creating a secondary cluster in Consul Federation. | `bool` | `true` | no |
 | <a name="input_hvn_vault_cidr_block"></a> [hvn\_vault\_cidr\_block](#input\_hvn\_vault\_cidr\_block) | CIDR block for the HVN Vault VPC | `string` | `"172.25.16.0/24"` | no |
 | <a name="input_hvn_vault_id"></a> [hvn\_vault\_id](#input\_hvn\_vault\_id) | The ID of the HCP Vault HVN. | `string` | `"hcp-vault-hvn"` | no |

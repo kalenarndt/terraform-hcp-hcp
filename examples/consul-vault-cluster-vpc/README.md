@@ -36,7 +36,7 @@ To run this example you need to populate the following information:
 ### AWS Authentication
 You have 2 options to configure authentication:
 
-1. Export your AWS credentials as environment variables 
+1. Export your AWS credentials as environment variables
 2. Rename the [terraform.tfvars.example](/terraform.tfvars.example) to terraform.tfvars and populate the AWS variables.
 
 ### HCP Authentication
@@ -75,8 +75,7 @@ Please keep in mind that this will provision a Consul and Vault cluster which wi
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=3.51.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.2.0 |
 | <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >=0.10.0 |
 
 ## Providers
@@ -87,7 +86,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_hcp"></a> [hcp](#module\_hcp) | github.com/kalenarndt/terraform-hcp-hcp | n/a |
+| <a name="module_hcp"></a> [hcp](#module\_hcp) | github.com/kalenarndt/terraform-hcp-hcp | network-split |
 
 ## Resources
 
@@ -119,7 +118,6 @@ No resources.
 | <a name="output_consul_tier"></a> [consul\_tier](#output\_consul\_tier) | n/a |
 | <a name="output_consul_token"></a> [consul\_token](#output\_consul\_token) | n/a |
 | <a name="output_consul_version"></a> [consul\_version](#output\_consul\_version) | n/a |
-| <a name="output_ec2_bastion"></a> [ec2\_bastion](#output\_ec2\_bastion) | n/a |
 | <a name="output_vault_cluster_id"></a> [vault\_cluster\_id](#output\_vault\_cluster\_id) | n/a |
 | <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | n/a |
 | <a name="output_vault_public_endpoint_url"></a> [vault\_public\_endpoint\_url](#output\_vault\_public\_endpoint\_url) | n/a |
