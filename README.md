@@ -3,7 +3,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.2.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.15 |
 | <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >=0.10.0 |
 
@@ -11,8 +11,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.13.0 |
-| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.27.0 |
+| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.22.0 |
 
 ## Modules
 
@@ -22,33 +21,12 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [aws_ec2_transit_gateway_vpc_attachment_accepter.hvn_aws_tgw_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway_vpc_attachment_accepter) | resource |
-| [aws_ec2_transit_gateway_vpc_attachment_accepter.hvn_consul_aws_tgw_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway_vpc_attachment_accepter) | resource |
-| [aws_ec2_transit_gateway_vpc_attachment_accepter.hvn_vault_aws_tgw_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ec2_transit_gateway_vpc_attachment_accepter) | resource |
-| [aws_ram_principal_association.hcp_aws_ram](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association) | resource |
-| [aws_ram_principal_association.hcp_consul_aws_ram](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association) | resource |
-| [aws_ram_principal_association.hcp_vault_aws_ram](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/ram_principal_association) | resource |
-| [aws_vpc_peering_connection_accepter.hvn_aws_vpc_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_peering_connection_accepter) | resource |
-| [aws_vpc_peering_connection_accepter.hvn_consul_aws_vpc_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_peering_connection_accepter) | resource |
-| [aws_vpc_peering_connection_accepter.hvn_vault_aws_vpc_accept](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/vpc_peering_connection_accepter) | resource |
-| [hcp_aws_network_peering.hvn_aws_peer](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_network_peering) | resource |
-| [hcp_aws_network_peering.hvn_consul_aws_peer](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_network_peering) | resource |
-| [hcp_aws_network_peering.hvn_vault_aws_peer](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_network_peering) | resource |
-| [hcp_aws_transit_gateway_attachment.hvn_consul_transit_gw](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_transit_gateway_attachment) | resource |
-| [hcp_aws_transit_gateway_attachment.hvn_transit_gw](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_transit_gateway_attachment) | resource |
-| [hcp_aws_transit_gateway_attachment.hvn_vault_transit_gw](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/aws_transit_gateway_attachment) | resource |
 | [hcp_consul_cluster.consul_cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_cluster) | resource |
 | [hcp_consul_cluster_root_token.consul_token](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_cluster_root_token) | resource |
 | [hcp_consul_snapshot.snapshot](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_snapshot) | resource |
 | [hcp_hvn.hcp_consul_hvn](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn) | resource |
 | [hcp_hvn.hcp_hvn](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn) | resource |
 | [hcp_hvn.hcp_vault_hvn](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn) | resource |
-| [hcp_hvn_route.hvn_consul_tgw_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
-| [hcp_hvn_route.hvn_consul_vpc_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
-| [hcp_hvn_route.hvn_tgw_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
-| [hcp_hvn_route.hvn_vault_tgw_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
-| [hcp_hvn_route.hvn_vault_vpc_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
-| [hcp_hvn_route.hvn_vpc_route](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/hvn_route) | resource |
 | [hcp_vault_cluster.vault_cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/vault_cluster) | resource |
 | [hcp_vault_cluster_admin_token.vault_token](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/vault_cluster_admin_token) | resource |
 | [hcp_consul_cluster.primary](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/data-sources/consul_cluster) | data source |
@@ -132,9 +110,6 @@ No modules.
 | <a name="output_hvn_consul_link"></a> [hvn\_consul\_link](#output\_hvn\_consul\_link) | n/a |
 | <a name="output_hvn_single_link"></a> [hvn\_single\_link](#output\_hvn\_single\_link) | n/a |
 | <a name="output_hvn_vault_link"></a> [hvn\_vault\_link](#output\_hvn\_vault\_link) | n/a |
-| <a name="output_tgw_consul_target_link"></a> [tgw\_consul\_target\_link](#output\_tgw\_consul\_target\_link) | n/a |
-| <a name="output_tgw_single_hvn_target_link"></a> [tgw\_single\_hvn\_target\_link](#output\_tgw\_single\_hvn\_target\_link) | n/a |
-| <a name="output_tgw_vault_target_link"></a> [tgw\_vault\_target\_link](#output\_tgw\_vault\_target\_link) | n/a |
 | <a name="output_vault_cluster_id"></a> [vault\_cluster\_id](#output\_vault\_cluster\_id) | n/a |
 | <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | n/a |
 | <a name="output_vault_public_endpoint_url"></a> [vault\_public\_endpoint\_url](#output\_vault\_public\_endpoint\_url) | n/a |

@@ -58,18 +58,6 @@ output "consul_k8s_token" {
   value = local.output_consul_k8s_token_nonsensitive
 }
 
-output "tgw_vault_target_link" {
-  value = concat(hcp_aws_transit_gateway_attachment.hvn_vault_transit_gw.*.self_link, [""])[0]
-}
-
-output "tgw_single_hvn_target_link" {
-  value = concat(hcp_aws_transit_gateway_attachment.hvn_transit_gw.*.self_link, [""])[0]
-}
-
-output "tgw_consul_target_link" {
-  value = concat(hcp_aws_transit_gateway_attachment.hvn_consul_transit_gw.*.self_link, [""])[0]
-}
-
 output "hvn_vault_link" {
   value = concat(hcp_hvn.hcp_vault_hvn.*.self_link, [""])[0]
 }
