@@ -10,7 +10,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.22.0 |
+| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.43.0 |
 
 ## Modules
 
@@ -20,6 +20,7 @@ No modules.
 
 | Name | Type |
 |------|------|
+| [hcp_boundary_cluster.boundary_cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/boundary_cluster) | resource |
 | [hcp_consul_cluster.consul_cluster](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_cluster) | resource |
 | [hcp_consul_cluster_root_token.consul_token](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_cluster_root_token) | resource |
 | [hcp_consul_snapshot.snapshot](https://registry.terraform.io/providers/hashicorp/hcp/latest/docs/resources/consul_snapshot) | resource |
@@ -35,6 +36,9 @@ No modules.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_auto_hvn_to_hvn_peering"></a> [auto\_hvn\_to\_hvn\_peering](#input\_auto\_hvn\_to\_hvn\_peering) | Flag to enable auto hvn to hvn peering. Defaults to false | `bool` | `false` | no |
+| <a name="input_boundary_cluster_name"></a> [boundary\_cluster\_name](#input\_boundary\_cluster\_name) | Name of the HCP Boundary cluster that will be created | `string` | `""` | no |
+| <a name="input_boundary_password"></a> [boundary\_password](#input\_boundary\_password) | Boundary administrator password. This will show up in the state file so please be careful | `string` | `""` | no |
+| <a name="input_boundary_user"></a> [boundary\_user](#input\_boundary\_user) | Boundary administrator username | `string` | `""` | no |
 | <a name="input_cloud_provider"></a> [cloud\_provider](#input\_cloud\_provider) | The cloud provider of the HCP HVN, HCP Vault, or HCP Consul cluster. | `string` | `"aws"` | no |
 | <a name="input_connect_enabled"></a> [connect\_enabled](#input\_connect\_enabled) | Denotes the Consul connect feature should be enabled. Defaults to true | `bool` | `true` | no |
 | <a name="input_consul_cluster_name"></a> [consul\_cluster\_name](#input\_consul\_cluster\_name) | The name (id) of the HCP Consul cluster | `string` | `"hcp-consul-cluster"` | no |

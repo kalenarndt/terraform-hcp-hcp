@@ -1,5 +1,5 @@
 module "hcp" {
-  source                = "github.com/kalenarndt/terraform-hcp-hcp?ref=network-split"
+  source                = "../../"
   region                = var.region
   consul_tier           = "development"
   consul_size           = "x_small"

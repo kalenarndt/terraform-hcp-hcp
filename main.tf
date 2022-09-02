@@ -1,5 +1,6 @@
 ######################################     Single HVN Networking     #######################################
-// Creates a single HCP HVN for both Consul and Vault
+##                              Used when putting Vault and Consul on a shared HVN                        ##
+############################################################################################################
 resource "hcp_hvn" "hcp_hvn" {
   count          = var.single_hvn ? 1 : 0
   hvn_id         = var.hvn_id
@@ -34,8 +35,8 @@ resource "hcp_hvn" "hcp_consul_hvn" {
   cidr_block     = var.hvn_consul_cidr_block
 }
 
-######################################      HCP Vault Cluster      ######################################
-
+#######################################      HCP Vault Cluster      #######################################
+###########################################################################################################
 // creates the vault cluster on the hvn network resource
 resource "hcp_vault_cluster" "vault_cluster" {
   count             = var.create_vault_cluster ? 1 : 0
@@ -52,7 +53,8 @@ resource "hcp_vault_cluster_admin_token" "vault_token" {
   cluster_id = concat(hcp_vault_cluster.vault_cluster.*.cluster_id, [""])[0] != "" ? concat(hcp_vault_cluster.vault_cluster.*.cluster_id, [""])[0] : var.vault_cluster_name
 }
 
-######################################      HCP Consul Cluster      ######################################
+######################################      HCP Consul Cluster      #######################################
+###########################################################################################################
 
 // creates the hcp consul cluster
 resource "hcp_consul_cluster" "consul_cluster" {
@@ -67,6 +69,23 @@ resource "hcp_consul_cluster" "consul_cluster" {
   connect_enabled         = var.connect_enabled
   auto_hvn_to_hvn_peering = var.hvn_to_hvn_peering
   primary_link            = var.federation != false ? data.hcp_consul_cluster.primary[0].cluster_id : null
+}
+
+######################################     HCP Boundary Cluster     #######################################
+###########################################################################################################
+
+resource "hcp_boundary_cluster" "boundary_cluster" {
+  count      = var.boundary_cluster_name != "" ? 1 : 0
+  cluster_id = var.boundary_cluster_name
+  username   = var.boundary_user
+  password   = var.boundary_password
+  lifecycle {
+    # Check boundary_user and boundary_password isn't the default value
+    precondition {
+      condition     = var.boundary_user != "" && var.boundary_password != ""
+      error_message = "var.boundary_user and var.boundary_password must have a definition when creating a cluster."
+    }
+  }
 }
 
 // generates a consul root token for the cluster

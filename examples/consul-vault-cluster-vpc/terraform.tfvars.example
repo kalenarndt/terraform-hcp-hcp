@@ -1,7 +1,0 @@
-vpc_region = "us-west-2"
-vpc_owner_id = "ownerid"
-vpc_id = "exampleid"
-aws_access_key = "1234568792"
-aws_secret_key = "examplekey"
-hcp_client_id = "exampleid"
-hcp_client_secret = "examplesecret"

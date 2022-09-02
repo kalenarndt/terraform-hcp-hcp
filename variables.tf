@@ -167,8 +167,6 @@ variable "hvn_consul_id" {
   default     = "hcp-consul-hvn"
 }
 
-
-
 variable "single_hvn" {
   description = "Flag that creates a single HVN that is shared between Vault and Consul. Defaults to false"
   type        = bool
@@ -201,4 +199,23 @@ variable "hvn_id" {
   description = "The ID of the HCP HVN."
   type        = string
   default     = "hcp-hvn"
+}
+
+
+variable "boundary_user" {
+  description = "Boundary administrator username"
+  type        = string
+  default     = ""
+}
+
+variable "boundary_cluster_name" {
+  description = "Name of the HCP Boundary cluster that will be created"
+  type        = string
+  default     = ""
+}
+
+variable "boundary_password" {
+  description = "Boundary administrator password. This will show up in the state file so please be careful"
+  type        = string
+  default     = ""
 }
