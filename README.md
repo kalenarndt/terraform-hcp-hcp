@@ -35,7 +35,6 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_auto_hvn_to_hvn_peering"></a> [auto\_hvn\_to\_hvn\_peering](#input\_auto\_hvn\_to\_hvn\_peering) | Flag to enable auto hvn to hvn peering. Defaults to false | `bool` | `false` | no |
 | <a name="input_boundary_cluster_name"></a> [boundary\_cluster\_name](#input\_boundary\_cluster\_name) | Name of the HCP Boundary cluster that will be created | `string` | `""` | no |
 | <a name="input_boundary_password"></a> [boundary\_password](#input\_boundary\_password) | Boundary administrator password. This will show up in the state file so please be careful | `string` | `""` | no |
 | <a name="input_boundary_user"></a> [boundary\_user](#input\_boundary\_user) | Boundary administrator username | `string` | `""` | no |
@@ -60,6 +59,7 @@ No modules.
 | <a name="input_hvn_vault_id"></a> [hvn\_vault\_id](#input\_hvn\_vault\_id) | The ID of the HCP Vault HVN. | `string` | `"hcp-vault-hvn"` | no |
 | <a name="input_min_consul_version"></a> [min\_consul\_version](#input\_min\_consul\_version) | Minimum Consul version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `""` | no |
 | <a name="input_min_vault_version"></a> [min\_vault\_version](#input\_min\_vault\_version) | Minimum Vault version to use when creating the cluster. If null, defaults to HCP recommended version | `string` | `""` | no |
+| <a name="input_output_boundary_password"></a> [output\_boundary\_password](#input\_output\_boundary\_password) | Conditional that allows for the password to be output as a sensitive value | `bool` | `false` | no |
 | <a name="input_output_consul_token"></a> [output\_consul\_token](#input\_output\_consul\_token) | Flag to output the generated Consul token as a non-sensitive object. Use with caution | `bool` | `false` | no |
 | <a name="input_output_vault_token"></a> [output\_vault\_token](#input\_output\_vault\_token) | Flag to output the generated Vault token as a non-sensitive object. Use with caution | `bool` | `false` | no |
 | <a name="input_primary_consul_cluster_name"></a> [primary\_consul\_cluster\_name](#input\_primary\_consul\_cluster\_name) | Primary Consul cluster name (id) that secondary clusters will be federating with. | `string` | `""` | no |
@@ -74,6 +74,9 @@ No modules.
 
 | Name | Description |
 |------|-------------|
+| <a name="output_boundary_cluster_url"></a> [boundary\_cluster\_url](#output\_boundary\_cluster\_url) | Public URL for the HCP Boundary cluster |
+| <a name="output_boundary_password"></a> [boundary\_password](#output\_boundary\_password) | HCP Boundary administrator password |
+| <a name="output_boundary_username"></a> [boundary\_username](#output\_boundary\_username) | HCP Boundary admin username |
 | <a name="output_consul_cert"></a> [consul\_cert](#output\_consul\_cert) | n/a |
 | <a name="output_consul_cluster_id"></a> [consul\_cluster\_id](#output\_consul\_cluster\_id) | n/a |
 | <a name="output_consul_config"></a> [consul\_config](#output\_consul\_config) | n/a |
@@ -89,9 +92,9 @@ No modules.
 | <a name="output_hvn_single_link"></a> [hvn\_single\_link](#output\_hvn\_single\_link) | n/a |
 | <a name="output_hvn_vault_link"></a> [hvn\_vault\_link](#output\_hvn\_vault\_link) | n/a |
 | <a name="output_vault_cluster_id"></a> [vault\_cluster\_id](#output\_vault\_cluster\_id) | n/a |
-| <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | n/a |
-| <a name="output_vault_public_endpoint_url"></a> [vault\_public\_endpoint\_url](#output\_vault\_public\_endpoint\_url) | n/a |
-| <a name="output_vault_tier"></a> [vault\_tier](#output\_vault\_tier) | n/a |
-| <a name="output_vault_token"></a> [vault\_token](#output\_vault\_token) | n/a |
-| <a name="output_vault_version"></a> [vault\_version](#output\_vault\_version) | n/a |
+| <a name="output_vault_private_endpoint_url"></a> [vault\_private\_endpoint\_url](#output\_vault\_private\_endpoint\_url) | Private Endpoint URL for the HCP Vault cluster |
+| <a name="output_vault_public_endpoint_url"></a> [vault\_public\_endpoint\_url](#output\_vault\_public\_endpoint\_url) | Public Endpoint URL for the HCP Vault cluster |
+| <a name="output_vault_tier"></a> [vault\_tier](#output\_vault\_tier) | HCP Vault tier that was deployed |
+| <a name="output_vault_token"></a> [vault\_token](#output\_vault\_token) | HCP Vault Admin token |
+| <a name="output_vault_version"></a> [vault\_version](#output\_vault\_version) | HCP Vault version |
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->

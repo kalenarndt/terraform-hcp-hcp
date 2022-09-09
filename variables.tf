@@ -137,12 +137,6 @@ variable "snapshot_name" {
   default     = ""
 }
 
-variable "auto_hvn_to_hvn_peering" {
-  description = "Flag to enable auto hvn to hvn peering. Defaults to false"
-  type        = bool
-  default     = false
-}
-
 variable "federation" {
   description = "Flag to enable Consul Federation. Defaults to false"
   type        = bool
@@ -218,4 +212,10 @@ variable "boundary_password" {
   description = "Boundary administrator password. This will show up in the state file so please be careful"
   type        = string
   default     = ""
+}
+
+variable "output_boundary_password" {
+  description = "Conditional that allows for the password to be output as a sensitive value"
+  type        = bool
+  default     = false
 }
