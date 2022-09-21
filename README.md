@@ -3,7 +3,7 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.0.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.2.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | >= 3.15 |
 | <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >=0.10.0 |
 
@@ -11,8 +11,8 @@
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.13.0 |
-| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.27.0 |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | 4.31.0 |
+| <a name="provider_hcp"></a> [hcp](#provider\_hcp) | 0.44.0 |
 
 ## Modules
 

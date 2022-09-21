@@ -36,8 +36,4 @@ override.tf.json
 # Ignore secrets file
 secrets.tfvars
 
-# Ignores pre-commit hooks and editorconfig
-.editorconfig
-.pre-commit-config.yaml
-
 # End of https://www.toptal.com/developers/gitignore/api/terraform
