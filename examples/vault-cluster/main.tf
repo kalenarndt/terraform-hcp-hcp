@@ -1,6 +1,6 @@
 module "hcp" {
   source               = "../../"
-  region               = var.region
+  region               = "us-west-2"
   vault_tier           = "dev"
   hvn_vault_cidr_block = "172.25.16.0/20"
   create_vault_cluster = true

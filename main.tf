@@ -1,3 +1,11 @@
+#################################          Vault Replication         #######################################
+##                                                 Used when                    ##
+############################################################################################################
+data "hcp_vault_cluster" "external_primary" {
+  count      = length(var.vault_primary_cluster_id) >= 1 ? 1 : 0
+  cluster_id = var.vault_primary_cluster_id
+}
+
 ######################################     Single HVN Networking     #######################################
 ##                              Used when putting Vault and Consul on a shared HVN                        ##
 ############################################################################################################
@@ -45,6 +53,7 @@ resource "hcp_vault_cluster" "vault_cluster" {
   tier              = var.vault_tier
   public_endpoint   = var.vault_public_endpoint
   min_vault_version = var.min_vault_version != "" ? var.min_vault_version : null
+  primary_link      = length(var.vault_primary_cluster_id) >= 1 ? data.hcp_vault_cluster.external_primary[0].cluster_id : null
 }
 
 // generates a vault admin token for the cluster
@@ -64,7 +73,7 @@ resource "hcp_consul_cluster" "consul_cluster" {
   tier                    = var.consul_tier
   size                    = var.consul_size
   public_endpoint         = var.consul_public_endpoint
-  datacenter              = var.consul_datacenter != "" ? var.consul_datacenter : var.consul_cluster_name
+  datacenter              = var.consul_datacenter
   min_consul_version      = var.min_consul_version != "" ? var.min_consul_version : null
   connect_enabled         = var.connect_enabled
   auto_hvn_to_hvn_peering = var.hvn_to_hvn_peering

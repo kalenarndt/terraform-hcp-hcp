@@ -114,9 +114,9 @@ variable "consul_cluster_name" {
 }
 
 variable "consul_datacenter" {
-  description = "The Consul datacenter name. If set to null the datacenter will be set to the Consul cluster name. Defaults to null"
+  description = "The Consul datacenter name. Defaults to dc1"
   type        = string
-  default     = ""
+  default     = "dc1"
 }
 
 variable "hvn_to_hvn_peering" {
@@ -167,6 +167,12 @@ variable "single_hvn" {
   default     = false
 }
 
+/* variable "prevent_destroy" {
+  description = "Flag that sets the prevent_destroy argument on the HCP Consul / Vault / Boundary clusters"
+  type        = bool
+  default     = true
+} */
+
 variable "hvn_cidr_block" {
   description = "CIDR block for the HVN VPC"
   type        = string
@@ -183,6 +189,12 @@ variable "region" {
   }
 }
 
+variable "vault_primary_cluster_id" {
+  description = "(Optional) Cluster ID of the HCP Vault Cluster that will be the primary in this configuration"
+  type        = string
+  default     = ""
+}
+
 variable "cloud_provider" {
   description = "The cloud provider of the HCP HVN, HCP Vault, or HCP Consul cluster."
   type        = string
@@ -194,7 +206,6 @@ variable "hvn_id" {
   type        = string
   default     = "hcp-hvn"
 }
-
 
 variable "boundary_user" {
   description = "Boundary administrator username"

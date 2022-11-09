@@ -1,6 +1,6 @@
 module "hcp" {
   source                = "../../"
-  region                = var.region
+  region                = "us-west-2"
   consul_tier           = "development"
   consul_size           = "x_small"
   vault_tier            = "dev"
