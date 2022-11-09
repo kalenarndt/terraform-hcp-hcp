@@ -73,7 +73,7 @@ resource "hcp_consul_cluster" "consul_cluster" {
   tier                    = var.consul_tier
   size                    = var.consul_size
   public_endpoint         = var.consul_public_endpoint
-  datacenter              = var.consul_datacenter
+  datacenter              = var.consul_datacenter != "" ? var.consul_datacenter : var.consul_cluster_name
   min_consul_version      = var.min_consul_version != "" ? var.min_consul_version : null
   connect_enabled         = var.connect_enabled
   auto_hvn_to_hvn_peering = var.hvn_to_hvn_peering

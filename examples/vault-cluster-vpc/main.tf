@@ -1,6 +1,6 @@
 module "hcp" {
   source               = "../../"
-  region               = "us-west-2"
+  region               = var.region
   vault_tier           = "dev"
   create_vault_cluster = true
   generate_vault_token = true

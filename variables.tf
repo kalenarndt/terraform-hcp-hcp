@@ -114,9 +114,9 @@ variable "consul_cluster_name" {
 }
 
 variable "consul_datacenter" {
-  description = "The Consul datacenter name. Defaults to dc1"
+  description = "The Consul datacenter name. If set to null the datacenter will be set to the Consul cluster name. Defaults to null"
   type        = string
-  default     = "dc1"
+  default     = ""
 }
 
 variable "hvn_to_hvn_peering" {

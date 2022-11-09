@@ -1,3 +1,3 @@
 provider "hcp" {
-  # Using environment variables for authentication
+# Using environment variables for authentication
 }

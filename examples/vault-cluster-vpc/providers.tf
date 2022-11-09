@@ -1,3 +1,3 @@
 provider "hcp" {
-  # Using ENV variables
+# Using ENV variables
 }
