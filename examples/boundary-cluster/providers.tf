@@ -1,3 +1,3 @@
 provider "hcp" {
-# Using ENV vars for auth
+  # Using ENV vars for auth
 }

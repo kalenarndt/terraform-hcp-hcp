@@ -97,6 +97,11 @@ resource "hcp_boundary_cluster" "boundary_cluster" {
   }
 }
 
+data "http" "boundary_auth_id" {
+  count = var.boundary_cluster_name != "" ? 1 : 0
+  url   = "${hcp_boundary_cluster.boundary_cluster[0].cluster_url}/v1/auth-methods?scope_id=global"
+}
+
 // generates a consul root token for the cluster
 resource "hcp_consul_cluster_root_token" "consul_token" {
   count = var.create_consul_cluster && var.generate_consul_token || var.generate_consul_token ? 1 : 0

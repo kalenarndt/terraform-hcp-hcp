@@ -5,5 +5,9 @@ terraform {
       source  = "hashicorp/hcp"
       version = ">=0.10.0"
     }
+    http = {
+      source  = "hashicorp/http"
+      version = "3.2.1"
+    }
   }
 }
