@@ -6,7 +6,7 @@ The Configuration in this directroy will create the following objects:
 - 1 - HCP HVN Network `[172.25.16.0/20]`
 - 1 - HCP HVN Route Table  
 - 1 - Transit Gateway Attachment
-- 1 - Vault Admin Token 
+- 1 - Vault Admin Token
 
 
 This example creates a simple Vault cluster with a Transit Gateway attachment and generates a Vault token in the `admin` namespace and outputs it for use. Please note that this cluster is not exposed to the internet
@@ -32,7 +32,7 @@ To run this example you need to populate the following information:
 ### AWS Authentication
 You have 2 options to configure authentication:
 
-1. Export your AWS credentials as environment variables 
+1. Export your AWS credentials as environment variables
 2. Rename the [terraform.tfvars.example](/terraform.tfvars.example) to terraform.tfvars and populate the AWS variables.
 
 ### HCP Authentication
@@ -60,8 +60,7 @@ Please keep in mind that this will provision a Vault cluster which will incur co
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.0.0 |
-| <a name="requirement_aws"></a> [aws](#requirement\_aws) | >=3.51.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >=1.2.0 |
 | <a name="requirement_hcp"></a> [hcp](#requirement\_hcp) | >=0.10.0 |
 
 ## Providers
@@ -72,7 +71,7 @@ No providers.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_hcp"></a> [hcp](#module\_hcp) | github.com/kalenarndt/terraform-hcp-hcp | n/a |
+| <a name="module_hcp"></a> [hcp](#module\_hcp) | ../../ | n/a |
 
 ## Resources
 
@@ -80,16 +79,7 @@ No resources.
 
 ## Inputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_aws_access_key"></a> [aws\_access\_key](#input\_aws\_access\_key) | Access key used to authenticate with AWS. Environment variables are preferred | `string` | `null` | no |
-| <a name="input_aws_secret_key"></a> [aws\_secret\_key](#input\_aws\_secret\_key) | Secret key used to authenticate with AWS. Environment variables are preferred | `string` | `null` | no |
-| <a name="input_destination_cidr"></a> [destination\_cidr](#input\_destination\_cidr) | CIDR block for remote subnets that will be allowed to access HCP | `string` | `"10.0.0.0/16"` | no |
-| <a name="input_hcp_client_id"></a> [hcp\_client\_id](#input\_hcp\_client\_id) | Client ID used to authenticate with HCP. Environment variables are preferred | `string` | `null` | no |
-| <a name="input_hcp_client_secret"></a> [hcp\_client\_secret](#input\_hcp\_client\_secret) | Client secret used to authenticate with HCP. Environment variables are preferred | `string` | `null` | no |
-| <a name="input_region"></a> [region](#input\_region) | The region of the HCP HVN and Vault cluster. | `string` | `"us-west-2"` | no |
-| <a name="input_resource_share_arn"></a> [resource\_share\_arn](#input\_resource\_share\_arn) | Resource Share ARN that will be used with the vault provider ID for attachment | `string` | n/a | yes |
-| <a name="input_transit_gw_id"></a> [transit\_gw\_id](#input\_transit\_gw\_id) | ID for the AWS Transit Gateway that HVN will attach to. | `string` | n/a | yes |
+No inputs.
 
 ## Outputs
 
