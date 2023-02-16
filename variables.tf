@@ -184,8 +184,8 @@ variable "region" {
   type        = string
   default     = ""
   validation {
-    condition     = var.region != "us-west-2" || var.region != "us-east-1" || var.region != "eu-west-1" || var.region != "eu-west-2" || var.region != "eu-central-1" || var.region != "ap-southeast-1" || var.region != "ap-southeast-2"
-    error_message = "The variable region must be \"us-west-2\", \"us-east-1\", \"eu-west-1\", \"eu-west-2\", \"eu-central-1\", \"ap-southeast-1\", or \"ap-southeast-2\"."
+    condition     = var.region != "us-west-2" || var.region != "us-east-1" || var.region != "us-east-2" || var.region != "ca-central-1" || var.region != "eu-west-1" || var.region != "eu-west-2" || var.region != "eu-central-1" || var.region != "ap-southeast-1" || var.region != "ap-northeast-1"
+    error_message = "The variable region must be \"us-west-2\", \"us-east-1\", \"us-east-2\", \"ca-central-1\", \"eu-west-1\", \"eu-west-2\", \"eu-central-1\", \"ap-southeast-1\", \"ap-southeast-2\", or \"ap-northeast-1\"."
   }
 }
 

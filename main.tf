@@ -48,7 +48,7 @@ resource "hcp_hvn" "hcp_consul_hvn" {
 // creates the vault cluster on the hvn network resource
 resource "hcp_vault_cluster" "vault_cluster" {
   count             = var.create_vault_cluster ? 1 : 0
-  hvn_id            = var.single_hvn == true ? hcp_hvn.hcp_hvn[0].hvn_id : hcp_hvn.hcp_vault_hvn[0].hvn_id
+  hvn_id            = var.single_hvn ? hcp_hvn.hcp_hvn[0].hvn_id : hcp_hvn.hcp_vault_hvn[0].hvn_id
   cluster_id        = var.vault_cluster_name
   tier              = var.vault_tier
   public_endpoint   = var.vault_public_endpoint
@@ -69,7 +69,7 @@ resource "hcp_vault_cluster_admin_token" "vault_token" {
 resource "hcp_consul_cluster" "consul_cluster" {
   count                   = var.create_consul_cluster ? 1 : 0
   cluster_id              = var.consul_cluster_name
-  hvn_id                  = var.single_hvn == true ? hcp_hvn.hcp_hvn[0].hvn_id : hcp_hvn.hcp_consul_hvn[0].hvn_id
+  hvn_id                  = var.single_hvn ? hcp_hvn.hcp_hvn[0].hvn_id : hcp_hvn.hcp_consul_hvn[0].hvn_id
   tier                    = var.consul_tier
   size                    = var.consul_size
   public_endpoint         = var.consul_public_endpoint
@@ -111,9 +111,9 @@ resource "hcp_consul_cluster_root_token" "consul_token" {
 
 // outputs the tokens in clear text if variable is set to true
 locals {
-  output_consul_k8s_token_nonsensitive = var.output_consul_token && var.generate_consul_token == true ? nonsensitive(hcp_consul_cluster_root_token.consul_token[0].kubernetes_secret) : null
-  output_consul_token_nonsensitive     = var.output_consul_token && var.generate_consul_token == true ? nonsensitive(hcp_consul_cluster_root_token.consul_token[0].secret_id) : null
-  output_vault_token_nonsensitive      = var.output_vault_token && var.generate_vault_token == true ? nonsensitive(hcp_vault_cluster_admin_token.vault_token[0].token) : null
+  output_consul_k8s_token_nonsensitive = var.output_consul_token && var.generate_consul_token ? nonsensitive(hcp_consul_cluster_root_token.consul_token[0].kubernetes_secret) : null
+  output_consul_token_nonsensitive     = var.output_consul_token && var.generate_consul_token ? nonsensitive(hcp_consul_cluster_root_token.consul_token[0].secret_id) : null
+  output_vault_token_nonsensitive      = var.output_vault_token && var.generate_vault_token ? nonsensitive(hcp_vault_cluster_admin_token.vault_token[0].token) : null
 }
 
 ########### NEEDS TESTING#

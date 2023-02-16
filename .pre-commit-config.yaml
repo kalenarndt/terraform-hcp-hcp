@@ -36,7 +36,6 @@ repos:
       args:
         - --args=terraform
         - --args=--version >=1.2.0
-    - id: terraform_tflint
     - id: terraform_docs
       name: Generate Terraform README files
       args:
