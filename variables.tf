@@ -225,6 +225,16 @@ variable "boundary_password" {
   default     = ""
 }
 
+variable "boundary_cluster_tier" {
+  description = "Tier HCP Boundary cluster that will be created"
+  type        = string
+  default     = ""
+  validation {
+    condition     = can(regex("Standard|Plus", var.boundary_cluster_tier))
+    error_message = "The variable must contain 'Standard' or 'Plus'"
+  }
+}
+
 variable "output_boundary_password" {
   description = "Conditional that allows for the password to be output as a sensitive value"
   type        = bool
