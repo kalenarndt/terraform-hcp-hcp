@@ -88,6 +88,8 @@ resource "hcp_boundary_cluster" "boundary_cluster" {
   cluster_id = var.boundary_cluster_name
   username   = var.boundary_user
   password   = var.boundary_password
+  tier       = var.boundary_cluster_tier
+
   lifecycle {
     # Check boundary_user and boundary_password isn't the default value
     precondition {
