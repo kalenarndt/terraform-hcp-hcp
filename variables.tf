@@ -230,7 +230,7 @@ variable "boundary_cluster_tier" {
   type        = string
   default     = ""
   validation {
-    condition     = can(regex("Standard|Plus", var.boundary_cluster_tier))
+    condition     = contains(["Standard","Plus", ""], var.boundary_cluster_tier)
     error_message = "The variable must contain 'Standard' or 'Plus'"
   }
 }
