@@ -111,6 +111,11 @@ output "boundary_cluster_url" {
   description = "Public URL for the HCP Boundary cluster"
 }
 
+output "boundary_cluster_id" {
+  value       = try(trimsuffix(trimprefix(try(hcp_boundary_cluster.boundary_cluster[0].cluster_url, ""), "https://"), ".boundary.hashicorp.cloud"), null)
+  description = "HCP Boundary cluster ID"
+}
+
 output "boundary_auth_id" {
   value       = var.boundary_cluster_name != "" ? jsondecode(data.http.boundary_auth_id[0].response_body).items[0].id : ""
   description = "Default auth_id for username and password"
